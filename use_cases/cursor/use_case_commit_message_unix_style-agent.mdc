@@ -18,6 +18,7 @@ alwaysApply: false
 - Use an optional footer for breaking changes or issue references.
 - Reject commit messages that do not comply with these rules.
 - Create multiple smaller commits instead of 1 single commits with all the changes
+- **Must not Push the changes**, ask before you push commits to origin
 
 ## Examples
 
