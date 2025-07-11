@@ -1,0 +1,48 @@
+---
+description: >
+  This rule enforces the UNIX (Linux kernel) commit message standard for all commit messages in this repository. It must be applied whenever a commit message is created, edited, or reviewed. The rule ensures that commit messages are clear, concise, and follow the 50/72 formatting convention, improving readability and maintainability of project history. It applies to all contributors and all tools that generate or validate commit messages.
+globs: 
+alwaysApply: false
+---
+
+# UNIX Style Commit Message Rule
+
+## Critical Rules
+
+- The commit message **title (subject line) must be 50 characters or fewer**.
+- The title must be **capitalized**, written in the **imperative mood**, and **must not end with a period**.
+- The **second line must be blank**.
+- The **body (if present) must wrap at 72 characters per line**.
+- The body should explain **what** and **why**, not **how**.
+- Use bullet points in the body if listing changes.
+- Use an optional footer for breaking changes or issue references.
+- Reject commit messages that do not comply with these rules.
+- Create multiple smaller commits instead of 1 single commits with all the changes
+- **Must not Push the changes**, ask before you push commits to origin
+
+## Examples
+
+<example type="valid">
+Add OAuth2 login support
+
+Implements OAuth2 login for third-party providers.
+Improves security and user convenience.
+
+- Refactors authentication flow
+- Adds tests for new endpoints
+</example>
+
+<example type="valid">
+Update constant value to 2.44
+</example>
+
+<example type="invalid">
+added OAuth2 login support.
+
+This commit adds OAuth2 login for third-party providers. It also
+refactors the authentication flow and adds tests for new endpoints.
+</example>
+
+<example type="invalid">
+refactored OAuth2 login support.
+</example>
