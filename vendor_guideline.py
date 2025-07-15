@@ -63,7 +63,7 @@ def process_for_cursor(filename, content, description, always_use):
     # Prepare the template content
     template = f"""---
 description: {description}
-globs: "**.*"
+globs: *.*
 alwaysApply: {str(always_use).lower()}
 ---
 
@@ -86,14 +86,15 @@ def process_for_claude_cli(filename, content, title, always_use):
     claude_md_path = "claude.md"
     if not os.path.exists(claude_md_path):
         with open(claude_md_path, "w") as file:
-            file.write("## Additional Instructions\n")
+            file.write("# Context\n\n")
+            file.write("## Additional Instructions\n\n")
             file.write("- Must look for Additional Instructions @.claude/guidelines/additional_instructions.md\n")
     
     # Create additional_instructions.md if it doesn't exist
     additional_instructions_path = os.path.join(claude_dir, "additional_instructions.md")
     if not os.path.exists(additional_instructions_path):
         with open(additional_instructions_path, "w") as file:
-            file.write("# Additional Instructions\n\n")
+            file.write("## Additional Instructions\n")
     
     # Copy the guideline file to the Claude guidelines directory
     guideline_dest_path = os.path.join(claude_dir, filename)

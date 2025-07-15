@@ -1,11 +1,13 @@
 list_of_guideline:
-  - name: use_case_commit_message_unix_style-agent.md
+  - title: Unix style commit message 
+    file: use_case_commit_message_unix_style-agent.md
+    description: This rule enforces the UNIX (Linux kernel) commit message standard for all commit messages in this repository. It must be applied whenever a commit message is created, edited, or reviewed. The rule ensures that commit messages are clear, concise, and follow the 50/72 formatting convention, improving readability and maintainability of project history. It applies to all contributors and all tools that generate or validate commit messages.
+    always_use: true
+  - title: Check for typos
+    file: use_case_check_for_typos-agent.md
     description:
     always_use: true
-  - name: use_case_check_for_typos-agent.md
-    description:
-    always_use: true
-  - name: use_case_check_for_grammar-agent.md
+  - title: Check for grammar
+    file: use_case_check_for_grammar-agent.md
     description:
     always_use: false
-  
