@@ -19,6 +19,9 @@ alwaysApply: false
 - Reject commit messages that do not comply with these rules.
 - Create multiple smaller commits instead of 1 single commits with all the changes
 - **Must not Push the changes**, ask before you push commits to origin
+- Print which branch you are committing to.
+- Create a new branch if you are on `master` or `main` branch.
+- **Never make commit on `master` or `main` branch.**
 
 ## Examples
 
