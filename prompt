@@ -1,0 +1,40 @@
+# Context
+
+As a senior python engineer, your task is to write a python script. there will be an entry fuction which will be called from Makefile.
+
+## Deliverables
+
+Your job is to do the followings:
+
+1. Create python file called vendor_guideline.py
+2. Create a function called init()
+3. the init fuction should work as follows:
+3.1. It reads list of md files from the `docs/ai-agent-guidelines/list_of_guideline.yml`. Each entry has 4 attributes. `title`, `filename`, `description` as string values, and `always_use` as boolean value.
+3.2. it containts list of ai agent developement tools as follows : "cursor", "claude-cli", "intelij"
+3.2. for each file do the followings
+3.2.1. read the file name and contents
+3.2.2. perform following task specific for each developement tools as follows
+
+3.2.2.1. for cursor : (if not present) create directory `.cursor/rules`
+3.2.2.2. (if not present) create file with the same name but with `.mdc` file extentsion
+3.2.2.3. (overwrite if present) add the followings at the begining of the file by filling out the template.
+
+```template
+---
+description: {desctiption}
+globs: *.*
+alwaysApply: {always_use}
+---
+
+```
+
+3.2.2.4. (overwrite if present) copy the content of the md file into the mdc file, after a blank line.
+
+3.2.3.1. for claude-cli : (if not present) create file called `claude.md`
+3.2.3.2. (if not present) create directory `.claude/guidelines`
+3.2.3.3. (if not present) add `## Additional Instructions` at the end of the file. in new line add following `- Must look for Additional Instructions @.claude/guidelines/additional_instructions.md`
+3.2.3.4. (if not present) create a file called `.claude/guidelines/additional_instructions.md`. (if not present) add following as main header `# Additional Instructions` and a new line.
+3.2.3.5. copy the md file into the `.claude/guidelines` directory
+3.2.3.6. (overwrite if present) add following as new line `- {directive} : {title} @{filename}`. if always_use is true use set directive as `MUST USE ALWAYS` otherwise `Use when specified in prompt`  
+
+3.2.4.1 for intelij : put a comment that it will me implemented later
