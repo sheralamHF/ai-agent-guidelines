@@ -1,10 +1,3 @@
----
-description: >
-  This rule enforces the UNIX (Linux kernel) commit message standard for all commit messages in this repository. It must be applied whenever a commit message is created, edited, or reviewed. The rule ensures that commit messages are clear, concise, and follow the 50/72 formatting convention, improving readability and maintainability of project history. It applies to all contributors and all tools that generate or validate commit messages.
-globs: 
-alwaysApply: false
----
-
 # UNIX Style Commit Message Rule
 
 ## Critical Rules
@@ -17,8 +10,11 @@ alwaysApply: false
 - Use bullet points in the body if listing changes.
 - Use an optional footer for breaking changes or issue references.
 - Reject commit messages that do not comply with these rules.
-- Create multiple smaller commits instead of 1 single commits with all the changes
+- Create multiple smaller commits instead of 1 single commit with all the changes
 - **Must not Push the changes**, ask before you push commits to origin
+- Print which branch you are committing to.
+- Create a new branch if you are on `master` or `main` branch.
+- **Never make commit on `master` or `main` branch.**
 
 ## Examples
 
