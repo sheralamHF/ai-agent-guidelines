@@ -1,0 +1,11 @@
+list_of_guideline:
+  - name: use_case_commit_message_unix_style-agent.md
+    description:
+    always_use: true
+  - name: use_case_check_for_typos-agent.md
+    description:
+    always_use: true
+  - name: use_case_check_for_grammar-agent.md
+    description:
+    always_use: false
+  
